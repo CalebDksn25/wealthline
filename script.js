@@ -1,44 +1,67 @@
 // script.js
-document.addEventListener("DOMContentLoaded", function() {
-    // Get references to the button and file input
+document.addEventListener("DOMContentLoaded", function () {
     const uploadButton = document.getElementById('upload-button');
     const fileInput = document.getElementById('file-input');
+    const uploadedFileDisplay = document.getElementById('uploaded-file');
 
-    // When the button is clicked, trigger the file input click
-    uploadButton.addEventListener('click', function() {
+    // Trigger file input click when button is clicked
+    uploadButton.addEventListener('click', function () {
         fileInput.click();
     });
-
-    // Handle the file selection
-    fileInput.addEventListener('change', function(event) {
+    // comment out this code when you want to implent the file upload to the server
+    fileInput.addEventListener('change', function (event) {
         const file = event.target.files[0];
         if (file) {
-            // You can handle the file upload here
-            // For demonstration, we'll just alert the file name
-            alert(`Selected file: ${file.name}`);
+            // Create a temporary URL for the file using URL.createObjectURL
+            const temporaryUrl = URL.createObjectURL(file);
 
-            // Example: Upload the file using Fetch API
-            /*
-            const formData = new FormData();
-            formData.append('file', file);
+            // Display the uploaded file link or details
+            uploadedFileDisplay.innerHTML = `
+                <p>Uploaded File: <a href="${temporaryUrl}" target="_blank">${file.name}</a></p>
+            `;
 
-            fetch('/upload', { // Replace '/upload' with your server upload URL
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
-                // Handle success (e.g., display a success message)
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-                // Handle error (e.g., display an error message)
+            // Clean up the temporary URL when no longer needed (optional)
+            fileInput.addEventListener('change', function () {
+                URL.revokeObjectURL(temporaryUrl);
             });
-            */
+        } else {
+            uploadedFileDisplay.innerHTML = '<p style="color: red;">No file selected. Please try again.</p>';
         }
     });
+    
+    // use the commented code below to upload the file to the server and initiate the server to save the file
+    // Handle file input change
+    // fileInput.addEventListener('change', async function (event) {
+    //     const file = event.target.files[0];
+    //     if (file) {
+    //         const formData = new FormData();
+    //         formData.append('file', file);
+
+            // try {
+            //     // Send the file to the server
+            //     const response = await fetch('/upload', { // Replace '/upload' with your server endpoint
+            //         method: 'POST',
+            //         body: formData,
+            //     });
+
+            //     if (response.ok) {
+            //         const result = await response.json();
+
+            //         // Display the uploaded file link or details
+            //         uploadedFileDisplay.innerHTML = `
+            //             <p>Uploaded File: <a href="${result.fileUrl}" target="_blank">${file.name}</a></p>
+            //         `;
+            //     } else {
+            //         uploadedFileDisplay.innerHTML = '<p style="color: red;">Upload failed. Please try again.</p>';
+            //     }
+            // } catch (error) {
+            //     console.error('Error uploading file:', error);
+            //     uploadedFileDisplay.innerHTML = '<p style="color: red;">An error occurred. Please try again later.</p>';
+            // }
+        // }
+    // });
 });
+
 document.getElementById('optionsDropdown').addEventListener('change', function() {
     const selectedValue = this.value;
     alert(`You selected: ${selectedValue}`);
