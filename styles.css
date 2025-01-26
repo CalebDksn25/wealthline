@@ -1,52 +1,32 @@
-/* styles.css */
-
 /* Reset some basic elements for consistency */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-.container {
-    background-color: #ffffff; /* White background */
-    border-radius: 15px; /* Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    padding: 15px 20px; /* Reduce vertical and horizontal padding */
-    margin: 10px auto; /* Center the container and keep minimal margin */
-    max-width: 400px; /* Adjust width to fit content */
-    max-height: 400px; 
-    text-align: center; /* Center-align text */
-}
-/* Reduce space between elements */
-.container h1 {
-    margin-bottom: 10px; /* Adjust space below the title */
-}
 
-
-.background-section {
-    background-image: url('images/professional-background-0rvi0y9hjbs1yq1q.jpg'); /* Replace with your image */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 50px;
-    color: white; /* Ensures text is readable */
-    text-align: center;
-}
-
+/* Body and General Background */
 body {
-    font-family: 'Roboto', sans-serif; /* Changed to Roboto for better aesthetics */
+    justify-content: center; /* Centers the container horizontally */
+    align-items: center; /* Centers the container vertically */
+    font-family: 'Roboto', sans-serif;
     background-color: #f5f7fa;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
-.navbar-title {
-    margin-left: 15px; /* Space between logo and title */
-    font-size: 1.5em; /* Adjust the size as needed */
-    color: #ffffff; /* Text color */
-    font-weight: bold; /* Make the title bold */
-    white-space: nowrap; /* Prevent text from wrapping */
+
+/* Background Section */
+.background-section {
+    background-image: url('images/professional-background-0rvi0y9hjbs1yq1q.jpg'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
 }
-/* Navigation Bar Styles */
+
+/* Navbar Styles */
 .navbar {
     width: 100%;
     background-color: #2c3e50;
@@ -54,18 +34,86 @@ body {
     display: flex;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed; /* Make navbar fixed at the top */
+    position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000; /* Ensure navbar stays above other content */
+    z-index: 1000;
 }
-/* From Uiverse.io by SpatexDEV */ 
+
+.navbar-title {
+    margin-left: 15px;
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.logo img {
+    height: 40px;
+}
+.uploaded-file span {
+    display: inline-flex; /* Ensure content inside is inline and aligned */
+    align-items: center; /* Vertically align the link and the button */
+}
+/* Container Block Style */
+.container {
+    margin: 80px auto 20px; /* Account for navbar height */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    text-align: center;
+}
+
+.container h1 {
+    margin-bottom: 10px;
+    color: #34495e;
+    font-size: 2rem;
+}
+
+/* Dropdown Container */
+.dropdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the dropdown */
+    margin-bottom: 20px;
+}
+
+.dropdown-container select {
+    width: 200px; /* Reduced dropdown width */
+    padding: 10px; /* Adjusted padding for a compact look */
+    border-radius: 6px;
+    border: 1px solid #bdc3c7;
+    font-size: 16px;
+    background-color: #ecf0f1;
+    cursor: pointer;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.dropdown-container select:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons horizontally */
+    gap: 15px; /* Space between buttons */
+    margin-top: 20px; /* Space above the buttons */
+}
+
+/* Buttons (use previous button styles) 
+/* General Button Styles */
 button {
     margin-top: 20px;
     border: none;
     display: flex;
     padding: 0.75rem 1.5rem;
-    background-color: #488aec;
+    background-color: #488aec; /* Default blue color */
     color: #ffffff;
     font-size: 0.75rem;
     line-height: 1rem;
@@ -75,261 +123,73 @@ button {
     text-transform: uppercase;
     vertical-align: middle;
     align-items: center;
-    border-radius: 1.5rem;
+    border-radius: 1.5rem; /* Rounded corners */
     user-select: none;
     gap: 0.75rem;
-    box-shadow:
-      0 4px 6px -1px #488aec31,
-      0 2px 4px -1px #488aec17;
-    transition: all 0.6s ease;
-  }
-  
-  button:hover {
-    box-shadow:
-      0 10px 15px -3px #488aec4f,
-      0 4px 6px -2px #488aec17;
-  }
-  
-  button:focus,
-  button:active {
+    box-shadow: 0 4px 6px -1px #488aec31, 0 2px 4px -1px #488aec17; /* Shadow */
+    transition: all 0.6s ease; /* Smooth transition */
+}
+
+button:hover {
+    box-shadow: 0 10px 15px -3px #488aec4f, 0 4px 6px -2px #488aec17;
+}
+
+button:focus,
+button:active {
     opacity: 0.85;
     box-shadow: none;
-  }
-  
-  button svg {
+}
+
+button svg {
     width: 1.25rem;
     height: 1.25rem;
-  }
-  
-
-/* Adjust the logo size */
-.logo img {
-    height: 40px; /* Adjust the size as needed */
 }
 
-/* Menu Styles */
-.menu {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #2c3e50; /* Changed to white for better contrast on dark navbar */
-    width: fit-content;
-    display: flex;
-    list-style: none;
-    margin-left: auto; /* Push menu to the right */
-    border-radius: 1.5rem;
+/* Upload Button */
+.upload-button {
+    background-color: #488aec;
 }
 
-.menu a {
-    text-decoration: none;
-    color: inherit;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
+.upload-button:hover {
+    background-color: #2874a6; /* Darker blue on hover */
 }
 
-.menu .link {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    padding: 12px 24px; /* Reduced horizontal padding for a sleeker look */
-    border-radius: 8px; /* Slightly reduced border-radius */
-    overflow: hidden;
-    transition: all 0.3s ease; /* Smoother transition */
-}
-
-.menu .link::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #3498db; /* Updated to a more vibrant blue */
-    z-index: -1;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-}
-
-.menu .link svg {
-    width: 14px;
-    height: 14px;
-    fill: #2c3e50;
-    transition: all 0.3s ease;
-}
-
-.menu .item {
-    position: relative;
-}
-
-.menu .item .submenu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 100%;
-    border-radius: 0 0 8px 8px;
-    left: 0;
-    width: 150px; /* Fixed width for consistency */
-    overflow: hidden;
-    border: 1px solid #2c3e50;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-    z-index: 1;
-    pointer-events: none;
-    list-style: none;
-    background-color: #2c3e50; /* Match navbar background */
-}
-
-.menu .item:hover .submenu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    pointer-events: auto;
-    border-top: transparent;
-    border-color: #3498db; /* Match the link background */
-}
-
-.menu .item:hover .link {
-    color: #2c3e50;
-    border-radius: 8px 8px 0 0;
-}
-
-.menu .item:hover .link::after {
-    transform: scaleX(1);
-    transform-origin: right;
-}
-
-.menu .item:hover .link svg {
-    fill: #2c3e50;
-    transform: rotate(-180deg);
-}
-
-.submenu .submenu-item {
-    width: 100%;
-    transition: all 0.3s ease;
-}
-
-.submenu .submenu-link {
-    display: block;
-    padding: 10px 20px;
-    width: 100%;
-    position: relative;
-    text-align: left;
-    color: #2c3e50; /* White text for submenu */
-    transition: all 0.3s ease;
-}
-
-.submenu .submenu-item:last-child .submenu-link {
-    border-bottom: none;
-}
-
-.submenu .submenu-link::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: scaleX(0);
-    width: 100%;
-    height: 100%;
-    background-color: #3498db; /* Vibrant blue */
-    z-index: -1;
-    transform-origin: left;
-    transition: transform 0.3s ease;
-}
-
-.submenu .submenu-link:hover:before {
-    transform: scaleX(1);
-    transform-origin: right;
-}
-
-.submenu .submenu-link:hover {
-    color: #ffffff;
-}
-
-/* Main Container Styles */
-.container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 100px 20px 40px; /* Increased top padding to account for fixed navbar */
-    margin-top: 60px; /* Optional: further spacing */
-}
-
-h1 {
-    margin-bottom: 30px;
-    color: #34495e;
-    font-size: 2em;
-    text-align: center;
-}
-
-/* Dropdown Container */
-.dropdown-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.dropdown-container label {
-    margin-bottom: 10px;
-    font-size: 1.1em;
-    color: #2c3e50;
-}
-
-/* Select Styles */
-select {
-    width: 250px;
-    padding: 12px 15px;
-    border-radius: 6px;
-    border: 1px solid #bdc3c7;
-    font-size: 16px;
-    appearance: none; /* Remove default arrow */
-    background-color: #ecf0f1;
-    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="7"><path fill="%23495a6e" d="M0 0l5 7 5-7z"/></svg>');
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 10px 7px;
+/* Next Page Button */
+.next-page-button {
+    background-color: #27ae60;
+    color: white;
     cursor: pointer;
-    transition: border 0.3s, box-shadow 0.3s;
+    transition: all 0.3s ease;
 }
 
-select:focus {
-    border-color: #3498db;
-    outline: none;
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+.next-page-button:disabled {
+    background-color: #a5d6a7; /* Fainter green for disabled state */
+    color: #e0e0e0; /* Light gray text */
+    cursor: not-allowed; /* Show "not-allowed" cursor */
 }
 
-/* Option Details Styling */
-.option-details {
-    margin-top: 30px;
-    padding: 20px;
-    width: 100%;
-    max-width: 600px;
-    background-color: #ecf0f1;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: none; /* Hidden by default */
+.next-page-button:hover {
+    background-color: #1e8449; /* Darker green on hover */
+}
+/* Style for the delete button */
+.delete-button {
+    margin-left: 10px; /* Spacing between the link and the button */
+    background: none; /* No background */
+    border: none; /* Remove border */
+    color: red; /* Red text color */
+    font-size: inherit; /* Matches the size of surrounding text */
+    font-weight: bold; /* Make it stand out */
+    cursor: pointer; /* Show pointer on hover */
+    padding: 0; /* Remove padding for compact size */
+    line-height: 1; /* Matches the line height of the text */
 }
 
-.option-details.active {
-    display: block;
+/* Hover effect for the delete button */
+.delete-button:hover {
+    color: darkred; /* Darker red on hover */
+    text-decoration: underline; /* Underline for emphasis */
 }
 
-.option-details h2 {
-    margin-bottom: 10px;
-    color: #2c3e50;
-}
-
-.option-details p {
-    color: #34495e;
-    line-height: 1.6;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -338,48 +198,21 @@ select:focus {
         align-items: flex-start;
     }
 
-    .menu {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .menu .item {
-        width: 100%;
-    }
-
-    .menu .link {
-        width: 100%;
-        justify-content: space-between;
-    }
-
-    .submenu {
-        width: 100%;
-    }
-
-    .nav-links {
-        display: none; /* Hide nav links on small screens */
-    }
-
     .container {
-        padding: 80px 10px 40px; /* Adjusted padding for smaller screens */
-    }
-
-    select {
-        width: 200px;
+        padding: 15px;
     }
 }
 
 @media (max-width: 600px) {
     .navbar {
-        padding: 8px 16px; /* Reduced padding */
+        padding: 8px 16px;
     }
 
-    .menu .link {
-        padding: 10px 20px; /* Reduced padding */
+    .container {
+        padding: 10px;
     }
 
-    .submenu .submenu-link {
-        padding: 8px 16px; /* Reduced padding */
+    select {
+        width: 100%;
     }
-
 }

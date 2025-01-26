@@ -1,39 +1,84 @@
-// script.js
 document.addEventListener("DOMContentLoaded", function () {
     const uploadButton = document.getElementById('upload-button');
     const fileInput = document.getElementById('file-input');
     const uploadedFileDisplay = document.getElementById('uploaded-file');
     const nextPageButton = document.getElementById('next-page-button');
+    const dropdown = document.getElementById('optionsDropdown');
 
-    // Handle new page button click
+    let fileUploaded = false;
+    let dropdownSelected = false;
+
+    // Function to enable or disable the "Get Analysis" button
+    function updateButtonState() {
+        if (fileUploaded && dropdownSelected) {
+            nextPageButton.disabled = false;
+        } else {
+            nextPageButton.disabled = true;
+        }
+    }
+
+    // Handle "Next Page" button click
     nextPageButton.addEventListener('click', function () {
-        // Open a new page when the button is clicked
-        window.location.href = 'results.html';
+        if (!nextPageButton.disabled) {
+            // Open a new page when the button is clicked
+            window.location.href = 'results.html';
+        }
     });
+
     // Trigger file input click when button is clicked
     uploadButton.addEventListener('click', function () {
         fileInput.click();
     });
-    // comment out this code when you want to implent the file upload to the server
+
+    // Handle file selection
     fileInput.addEventListener('change', function (event) {
         const file = event.target.files[0];
         if (file) {
-            // Create a temporary URL for the file using URL.createObjectURL
+            fileUploaded = true; // Mark file as uploaded
+            // Create a temporary URL for the file
             const temporaryUrl = URL.createObjectURL(file);
 
-            // Display the uploaded file link or details
+            // Display the uploaded file link with a delete button
             uploadedFileDisplay.innerHTML = `
-                <p>Uploaded File: <a href="${temporaryUrl}" target="_blank">${file.name}</a></p>
+                <span>
+                    Uploaded File: 
+                    <a href="${temporaryUrl}" target="_blank">${file.name}</a>
+                    <button id="delete-file" class="delete-button">X</button>
+                </span>
             `;
 
-            // Clean up the temporary URL when no longer needed (optional)
+            // Handle file deletion
+            const deleteFileButton = document.getElementById('delete-file');
+            deleteFileButton.addEventListener('click', function () {
+                uploadedFileDisplay.innerHTML = ''; // Clear the display
+                fileInput.value = ''; // Clear the input value
+                fileUploaded = false; // Reset fileUploaded flag
+                updateButtonState(); // Re-check conditions
+            });
+
+            // Clean up the temporary URL when no longer needed
             fileInput.addEventListener('change', function () {
                 URL.revokeObjectURL(temporaryUrl);
             });
         } else {
+            fileUploaded = false;
             uploadedFileDisplay.innerHTML = '<p style="color: red;">No file selected. Please try again.</p>';
         }
+        updateButtonState(); // Re-check conditions
     });
+
+    // Handle dropdown selection
+    dropdown.addEventListener('change', function () {
+        dropdownSelected = dropdown.value !== ''; // Check if a valid option is selected
+        updateButtonState(); // Re-check conditions
+    });
+
+    // Initial state of the "Get Analysis" button
+    updateButtonState();
+});
+
+
+
     
     // use the commented code below to upload the file to the server and initiate the server to save the file
     // Handle file input change
@@ -70,8 +115,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.getElementById('optionsDropdown').addEventListener('change', function() {
     const selectedValue = this.value;
-    alert(`You selected: ${selectedValue}`);
-    // You can add more functionality here based on the selected option
+    console.log(selectedValue);
 });
 
-});

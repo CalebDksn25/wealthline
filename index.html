@@ -5,32 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Financial Health Advisor</title>
-    <!-- Google Fonts (Optional) -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Meta Tags for SEO -->
+    <!-- SEO Meta Tags -->
     <meta name="description" content="Financial Health Advisor - Your guide to achieving financial wellness.">
     <meta name="keywords" content="Financial Planning, Investing, Retirement, Tax Strategy, Estate Planning">
-    <!-- Link to external CSS -->
+    <!-- External CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="background-section">
-    <!-- Navigation Bar -->
+    <!-- Navbar -->
     <nav class="navbar">
-        <div class="logo" id="logo-container">
+        <div class="logo">
             <img src="images/logo.PNG" alt="Financial Health Advisor Logo">
         </div>
-        </div>
-            <span class="navbar-title">Financial Health Advisor</span> 
-        </div>
-        <!-- Menu (Example Menu Items) -->
+        <span class="navbar-title">Financial Health Advisor</span>
     </nav>
 
     <!-- Main Content -->
     <main class="container">
         <h1>Financial Health Advisor</h1>
-       <div class="dropdown-container">
-            <label for="optionsDropdown" id="dropdownLabel">Select Your Investment Strategy:</label>
-            <select id="optionsDropdown" aria-labelledby="dropdownLabel">
+        <div class="dropdown-container">
+            <label for="optionsDropdown">Select Your Investment Strategy:</label>
+            <select id="optionsDropdown">
                 <option value="" disabled selected>Click to Open</option>
                 <option value="aggressive_investing">Aggressive Investing</option>
                 <option value="conservative_investing">Conservative Investing</option>
@@ -39,46 +36,25 @@
                 <option value="estate_planning">Estate Planning</option>
             </select>
         </div>
-        <div id="option-details" class="option-details">
-            <!-- Details will be displayed here based on selection -->
+        
+        <div class="button-container">
+            <button id="upload-button" class="upload-button">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                    <path stroke="#ffffff" d="M13.5 3H12H8C6.34315 3 5 4.34315 5 6V18C5 19.6569 6.34315 21 8 21H11M13.5 3L19 8.625M13.5 3V7.625C13.5 8.17728 13.9477 8.625 14.5 8.625H19M19 8.625V11.8125" stroke-width="2"></path>
+                    <path stroke="#ffffff" d="M17 15V18M17 21V18M17 18H14M17 18H20" stroke-width="2"></path>
+                </svg>
+                Upload Bank Statement
+            </button>
+            
+            <!-- Hidden File Input -->
+            <input type="file" id="file-input" style="display: none;" />
+            
+            <!-- Uploaded File Display -->
+            <div id="uploaded-file" class="uploaded-file" style="color:black"></div>
+            <button id="next-page-button" class="next-page-button" disabled>Get Analysis</button>
         </div>
-        <!-- From Uiverse.io by SpatexDEV --> 
-<!-- File Upload Button -->
-<button id="upload-button" type="button">
-    <svg
-      aria-hidden="true"
-      stroke="currentColor"
-      stroke-width="2"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        stroke-width="2"
-        stroke="#ffffff"
-        d="M13.5 3H12H8C6.34315 3 5 4.34315 5 6V18C5 19.6569 6.34315 21 8 21H11M13.5 3L19 8.625M13.5 3V7.625C13.5 8.17728 13.9477 8.625 14.5 8.625H19M19 8.625V11.8125"
-        stroke-linejoin="round"
-        stroke-linecap="round"
-      ></path>
-      <path
-        stroke-linejoin="round"
-        stroke-linecap="round"
-        stroke-width="2"
-        stroke="#ffffff"
-        d="M17 15V18M17 21V18M17 18H14M17 18H20"
-      ></path>
-    </svg>
-    Uplaod Bank Statement
-</button>
-
-<!-- Hidden File Input -->
-<input type="file" id="file-input" style="display: none;" accept=".png, .jpg, .jpeg, .pdf, .docx">
-<div id="uploaded-file" style="margin-top: 10px; color: #2c3e50;"></div>
-
-<button id="next-page-button" class="next-page-button">Get Analysis</button>
+        
     </main>
-
-    <!-- Link to external JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
