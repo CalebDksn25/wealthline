@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Function to fetch data from AWS server
         async function fetchDataFromAWS() {
             try {
-                const response = await fetch("https://your-aws-endpoint-url.com/data", { // Replace with your AWS endpoint URL
+                const response = await fetch("https://your-aws-endpoint-url.com/data", 
+                     { // Replace with your AWS endpoint URL
                     method: "GET", // or "POST" depending on your server setup
                     headers: {
                         "Content-Type": "application/json",

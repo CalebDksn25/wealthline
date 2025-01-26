@@ -6,7 +6,7 @@
   }
 
   body {
-    background-image: url('images/professional-background-0rvi0y9hjbs1yq1q.jpg'); /* Replace with your image path */
+    background-image: url('images/background_image.jpg'); /* Replace with your image path */
     background-size: cover; /* Makes the image cover the entire viewport */
     background-position: center; /* Centers the image in the viewport */
     background-repeat: no-repeat; /* Prevents the image from repeating */
