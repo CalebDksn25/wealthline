@@ -3,7 +3,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const uploadButton = document.getElementById('upload-button');
     const fileInput = document.getElementById('file-input');
     const uploadedFileDisplay = document.getElementById('uploaded-file');
+    const nextPageButton = document.getElementById('next-page-button');
 
+    // Handle new page button click
+    nextPageButton.addEventListener('click', function () {
+        // Open a new page when the button is clicked
+        window.location.href = 'results.html';
+    });
     // Trigger file input click when button is clicked
     uploadButton.addEventListener('click', function () {
         fileInput.click();
@@ -60,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // }
         // }
     // });
-});
+
 
 document.getElementById('optionsDropdown').addEventListener('change', function() {
     const selectedValue = this.value;
@@ -68,3 +74,4 @@ document.getElementById('optionsDropdown').addEventListener('change', function()
     // You can add more functionality here based on the selected option
 });
 
+});
