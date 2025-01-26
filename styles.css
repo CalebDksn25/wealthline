@@ -13,6 +13,7 @@
     padding: 15px 20px; /* Reduce vertical and horizontal padding */
     margin: 10px auto; /* Center the container and keep minimal margin */
     max-width: 400px; /* Adjust width to fit content */
+    max-height: 400px; 
     text-align: center; /* Center-align text */
 }
 /* Reduce space between elements */
@@ -20,10 +21,7 @@
     margin-bottom: 10px; /* Adjust space below the title */
 }
 
-.container p,
-.container select {
-    margin: 10px 0; /* Adjust space between dropdown and other elements */
-}
+
 .background-section {
     background-image: url('images/professional-background-0rvi0y9hjbs1yq1q.jpg'); /* Replace with your image */
     background-size: cover;
@@ -113,7 +111,7 @@ button {
 .menu {
     font-size: 16px;
     line-height: 1.6;
-    color: #ffffff; /* Changed to white for better contrast on dark navbar */
+    color: #2c3e50; /* Changed to white for better contrast on dark navbar */
     width: fit-content;
     display: flex;
     list-style: none;
@@ -158,7 +156,7 @@ button {
 .menu .link svg {
     width: 14px;
     height: 14px;
-    fill: #ffffff;
+    fill: #2c3e50;
     transition: all 0.3s ease;
 }
 
@@ -176,7 +174,7 @@ button {
     left: 0;
     width: 150px; /* Fixed width for consistency */
     overflow: hidden;
-    border: 1px solid #cccccc;
+    border: 1px solid #2c3e50;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
@@ -197,7 +195,7 @@ button {
 }
 
 .menu .item:hover .link {
-    color: #ffffff;
+    color: #2c3e50;
     border-radius: 8px 8px 0 0;
 }
 
@@ -207,7 +205,7 @@ button {
 }
 
 .menu .item:hover .link svg {
-    fill: #ffffff;
+    fill: #2c3e50;
     transform: rotate(-180deg);
 }
 
@@ -222,7 +220,7 @@ button {
     width: 100%;
     position: relative;
     text-align: left;
-    color: #ffffff; /* White text for submenu */
+    color: #2c3e50; /* White text for submenu */
     transition: all 0.3s ease;
 }
 
