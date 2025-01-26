@@ -38,6 +38,7 @@
         </div>
         
         <div class="button-container">
+            <!-- Upload Button -->
             <button id="upload-button" class="upload-button">
                 <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
                     <path stroke="#ffffff" d="M13.5 3H12H8C6.34315 3 5 4.34315 5 6V18C5 19.6569 6.34315 21 8 21H11M13.5 3L19 8.625M13.5 3V7.625C13.5 8.17728 13.9477 8.625 14.5 8.625H19M19 8.625V11.8125" stroke-width="2"></path>
@@ -45,14 +46,17 @@
                 </svg>
                 Upload Bank Statement
             </button>
-            
+        
             <!-- Hidden File Input -->
             <input type="file" id="file-input" style="display: none;" />
-            
-            <!-- Uploaded File Display -->
-            <div id="uploaded-file" class="uploaded-file" style="color:black"></div>
+        
+            <!-- Uploaded File Section -->
+            <div id="uploaded-file" class="uploaded-file"></div>
+        
+            <!-- Next Page Button -->
             <button id="next-page-button" class="next-page-button" disabled>Get Analysis</button>
         </div>
+        
         
     </main>
     <script src="script.js"></script>

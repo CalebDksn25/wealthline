@@ -1,282 +1,209 @@
 /* Reset some basic elements for consistency */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-.container {
-  background-color: #ffffff; /* White background */
-  border-radius: 15px; /* Rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  padding: 15px 20px; /* Reduce vertical and horizontal padding */
-  margin: 10px auto; /* Center the container and keep minimal margin */
-  max-width: 400px; /* Adjust width to fit content */
-  text-align: center; /* Center-align text */
-}
-/* Reduce space between elements */
-.container h1 {
-  margin-bottom: 10px; /* Adjust space below the title */
-}
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-.container p,
-.container select {
-  margin: 10px 0; /* Adjust space between dropdown and other elements */
-}
-
-/* Body and General Background */
-body {
-    justify-content: center; /* Centers the container horizontally */
-    align-items: center; /* Centers the container vertically */
-    font-family: 'Roboto', sans-serif;
-    background-color: #f5f7fa;
+  body {
+    background-image: url('images/professional-background-0rvi0y9hjbs1yq1q.jpg'); /* Replace with your image path */
+    background-size: cover; /* Makes the image cover the entire viewport */
+    background-position: center; /* Centers the image in the viewport */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    margin: 0;
+    font-family: "Roboto", sans-serif;
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    justify-content: center; /* Center the container horizontally */
+    align-items: center; /* Center the container vertically */
+    min-height: 100vh; /* Full viewport height */
+  }
+  
+  /* Navigation Bar */
+  .navbar {
+    width: 100%;
+    background-color: #2c3e50; /* Dark blue bar */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    position: fixed; /* Fix the navbar at the top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure navbar stays above other content */
+  }
+  
+  .navbar-title {
+    margin-left: 15px; /* Space between logo and title */
+    font-size: 1.5rem;
+    color: white; /* White text */
+    font-weight: bold;
+    white-space: nowrap; /* Prevent text wrapping */
+  }
+  
+  /* Adjust the logo size */
+  .logo img {
+    height: 40px; /* Adjust the size as needed */
+  }
+  
+  /* Main Container */
+  .container {
+    background-color: #e0e0e0;/* Replace with your image path */
+    background-size: cover; /* Ensure the image covers the container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent tiling */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px;
+    text-align: center; /* Center-align text inside */
+    max-width: 400px;
+    width: 100%; 
 }
-
-/* Background Section */
-.background-section {
-  background-image: url("images/professional-background-0rvi0y9hjbs1yq1q.jpg"); /* Replace with your image */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 50px;
-  color: white; /* Ensures text is readable */
-  text-align: center;
-}
-
-body {
-  font-family: "Roboto", sans-serif; /* Changed to Roboto for better aesthetics */
-  background-color: #f5f7fa;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-.navbar-title {
-  margin-left: 15px; /* Space between logo and title */
-  font-size: 1.5em; /* Adjust the size as needed */
-  color: #ffffff; /* Text color */
-  font-weight: bold; /* Make the title bold */
-  white-space: nowrap; /* Prevent text from wrapping */
-}
-/* Navigation Bar Styles */
-.navbar {
-  width: 100%;
-  background-color: #2c3e50;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: fixed; /* Make navbar fixed at the top */
-  top: 0;
-  left: 0;
-  z-index: 1000; /* Ensure navbar stays above other content */
-}
-/* From Uiverse.io by SpatexDEV */
-button {
-  margin-top: 20px;
-  border: none;
-  display: flex;
-  padding: 0.75rem 1.5rem;
-  background-color: #488aec;
-  color: #ffffff;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  font-weight: 700;
-  text-align: center;
-  cursor: pointer;
-  text-transform: uppercase;
-  vertical-align: middle;
-  align-items: center;
-  border-radius: 1.5rem;
-  user-select: none;
-  gap: 0.75rem;
-  box-shadow: 0 4px 6px -1px #488aec31, 0 2px 4px -1px #488aec17;
-  transition: all 0.6s ease;
-}
-
-button:hover {
-  box-shadow: 0 10px 15px -3px #488aec4f, 0 4px 6px -2px #488aec17;
-}
-
-button:focus,
-button:active {
-  opacity: 0.85;
-  box-shadow: none;
-}
-
-button svg {
-  width: 1.25rem;
-  height: 1.25rem;
-}
-
-/* Adjust the logo size */
-.logo img {
-  height: 40px; /* Adjust the size as needed */
-}
-
-/* Menu Styles */
-.menu {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #ffffff; /* Changed to white for better contrast on dark navbar */
-  width: fit-content;
-  display: flex;
-  list-style: none;
-  margin-left: auto; /* Push menu to the right */
-  border-radius: 1.5rem;
-}
-
-.upload-button:hover {
+  
+  /* Title Style */
+  .container h1 {
+    margin-bottom: 10px; /* Adjust space below the title */
+  }
+  
+  /* Dropdown Section */
+  .dropdown-container {
+    display: flex;
+    flex-direction: column; /* Stack dropdown and label vertically */
+    align-items: center; /* Center the dropdown and label */
+    margin-bottom: 20px;
+  }
+  
+  .dropdown-container label {
+    margin-bottom: 10px; /* Space below the label */
+    font-size: 1.1em; /* Label font size */
+    color: #2c3e50;
+  }
+  
+  .dropdown-container select {
+    width: 250px;
+    padding: 12px 15px;
+    border-radius: 6px;
+    border: 1px solid #bdc3c7;
+    font-size: 16px;
+    appearance: none; /* Remove default arrow */
+    background-color: #ecf0f1;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="7"><path fill="%23495a6e" d="M0 0l5 7 5-7z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px 7px;
+    cursor: pointer;
+    transition: border 0.3s, box-shadow 0.3s;
+  }
+  
+  .dropdown-container select:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+  }
+  
+  /* Button Container */
+  .button-container {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons horizontally */
+    gap: 15px; /* Space between buttons */
+    margin-top: 20px; /* Space above the buttons */
+  }
+  
+  /* Buttons */
+  button {
+    margin-top: 20px;
+    border: none;
+    display: flex;
+    padding: 0.75rem 1.5rem;
+    background-color: #488aec; /* Default blue color */
+    color: #ffffff;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    vertical-align: middle;
+    align-items: center;
+    border-radius: 1.5rem; /* Rounded corners */
+    user-select: none;
+    gap: 0.75rem;
+    transition: all 0.6s ease; /* Smooth transition */
+  }
+  
+  button:hover(:disabled) {
+    box-shadow: 0 10px 15px -3px #488aec4f, 0 4px 6px -2px #488aec17;
+  }
+  
+  button:focus,
+  button:active {
+    opacity: 0.85;
+    box-shadow: none;
+  }
+  
+  button svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  
+  /* Specific Button Styles */
+  .upload-button:hover {
     background-color: #2874a6; /* Darker blue on hover */
-}
-
-/* Next Page Button */
-.next-page-button {
+  }
+  
+  .next-page-button {
     background-color: #27ae60;
     color: white;
     cursor: pointer;
     transition: all 0.3s ease;
-}
-
-.next-page-button:disabled {
+  }
+  
+  .next-page-button:disabled {
     background-color: #a5d6a7; /* Fainter green for disabled state */
     color: #e0e0e0; /* Light gray text */
     cursor: not-allowed; /* Show "not-allowed" cursor */
+  }
+  .next-page-button:hover:not(:disabled) {
+    background-color: #1e8449; /* Darker green */
+}
+  
+ /* Uploaded File Display */
+.uploaded-file {
+    display: inline-flex; /* Ensures content inside stays inline */
+    align-items: center; /* Vertically aligns text and button */
+    justify-content: center; /* Centers the entire output */
+    gap: 8px; /* Space between the link and the delete button */
+    font-size: 1rem; /* Consistent font size */
+    color: #2c3e50; /* Dark text color for readability */
+    margin-top: 10px;
 }
 
-.next-page-button:hover {
-    background-color: #1e8449; /* Darker green on hover */
+.uploaded-file a {
+    color: #3498db; /* Blue color for file link */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make the link bold */
 }
-/* Style for the delete button */
+
+.uploaded-file a:hover {
+    text-decoration: underline; /* Add underline on hover */
+    color: #2874a6; /* Darker blue on hover */
+}
+
+/* Delete Button */
 .delete-button {
-    margin-left: 10px; /* Spacing between the link and the button */
-    background: none; /* No background */
+    background: none; /* Transparent background */
     border: none; /* Remove border */
-    color: red; /* Red text color */
-    font-size: inherit; /* Matches the size of surrounding text */
-    font-weight: bold; /* Make it stand out */
-    cursor: pointer; /* Show pointer on hover */
+    color: red; /* Red color for delete button */
+    font-size: 1rem; /* Match the text size */
+    font-weight: bold; /* Bold text */
+    cursor: pointer; /* Pointer cursor on hover */
     padding: 0; /* Remove padding for compact size */
-    line-height: 1; /* Matches the line height of the text */
+    line-height: 1; /* Match line height */
 }
 
-/* Hover effect for the delete button */
 .delete-button:hover {
     color: darkred; /* Darker red on hover */
-    text-decoration: underline; /* Underline for emphasis */
+    text-decoration: underline; /* Add underline on hover */
 }
 
-/* Dropdown Container */
-.dropdown-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.dropdown-container label {
-  margin-bottom: 10px;
-  font-size: 1.1em;
-  color: #2c3e50;
-}
-
-/* Select Styles */
-select {
-  width: 250px;
-  padding: 12px 15px;
-  border-radius: 6px;
-  border: 1px solid #bdc3c7;
-  font-size: 16px;
-  appearance: none; /* Remove default arrow */
-  background-color: #ecf0f1;
-  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="7"><path fill="%23495a6e" d="M0 0l5 7 5-7z"/></svg>');
-  background-repeat: no-repeat;
-  background-position: right 10px center;
-  background-size: 10px 7px;
-  cursor: pointer;
-  transition: border 0.3s, box-shadow 0.3s;
-}
-
-select:focus {
-  border-color: #3498db;
-  outline: none;
-  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
-}
-
-/* Option Details Styling */
-.option-details {
-  margin-top: 30px;
-  padding: 20px;
-  width: 100%;
-  max-width: 600px;
-  background-color: #ecf0f1;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: none; /* Hidden by default */
-}
-
-.option-details.active {
-  display: block;
-}
-
-.option-details h2 {
-  margin-bottom: 10px;
-  color: #2c3e50;
-}
-
-.option-details p {
-  color: #34495e;
-  line-height: 1.6;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .menu {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .menu .item {
-    width: 100%;
-  }
-
-  .menu .link {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .submenu {
-    width: 100%;
-  }
-
-  .nav-links {
-    display: none; /* Hide nav links on small screens */
-  }
-
-  .container {
-    padding: 80px 10px 40px; /* Adjusted padding for smaller screens */
-  }
-
-  select {
-    width: 200px;
-  }
-}
-
-@media (max-width: 600px) {
-  .navbar {
-    padding: 8px 16px; /* Reduced padding */
-  }
-
-  .container {
-    padding: 10px;
-  }
-
-  .submenu .submenu-link {
-    padding: 8px 16px; /* Reduced padding */
-  }
-}
+  

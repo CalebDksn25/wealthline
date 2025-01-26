@@ -1,37 +1,33 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const uploadButton = document.getElementById('upload-button');
-    const fileInput = document.getElementById('file-input');
-    const uploadedFileDisplay = document.getElementById('uploaded-file');
-    const nextPageButton = document.getElementById('next-page-button');
-    const dropdown = document.getElementById('optionsDropdown');
+    const uploadButton = document.getElementById("upload-button");
+    const fileInput = document.getElementById("file-input");
+    const uploadedFileDisplay = document.getElementById("uploaded-file");
+    const nextPageButton = document.getElementById("next-page-button");
+    const dropdown = document.getElementById("optionsDropdown");
 
     let fileUploaded = false;
     let dropdownSelected = false;
 
     // Function to enable or disable the "Get Analysis" button
     function updateButtonState() {
-        if (fileUploaded && dropdownSelected) {
-            nextPageButton.disabled = false;
-        } else {
-            nextPageButton.disabled = true;
-        }
+        nextPageButton.disabled = !(fileUploaded && dropdownSelected);
     }
 
     // Handle "Next Page" button click
-    nextPageButton.addEventListener('click', function () {
+    nextPageButton.addEventListener("click", function () {
         if (!nextPageButton.disabled) {
             // Open a new page when the button is clicked
-            window.location.href = 'results.html';
+            window.location.href = "results.html";
         }
     });
 
-    // Trigger file input click when button is clicked
-    uploadButton.addEventListener('click', function () {
+    // Trigger file input click when upload button is clicked
+    uploadButton.addEventListener("click", function () {
         fileInput.click();
     });
 
     // Handle file selection
-    fileInput.addEventListener('change', function (event) {
+    fileInput.addEventListener("change", function (event) {
         const file = event.target.files[0];
         if (file) {
             fileUploaded = true; // Mark file as uploaded
@@ -40,24 +36,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Display the uploaded file link with a delete button
             uploadedFileDisplay.innerHTML = `
-                <span>
-                    Uploaded File: 
+                <span class="uploaded-file">
                     <a href="${temporaryUrl}" target="_blank">${file.name}</a>
                     <button id="delete-file" class="delete-button">X</button>
                 </span>
             `;
 
             // Handle file deletion
-            const deleteFileButton = document.getElementById('delete-file');
-            deleteFileButton.addEventListener('click', function () {
-                uploadedFileDisplay.innerHTML = ''; // Clear the display
-                fileInput.value = ''; // Clear the input value
+            const deleteFileButton = document.getElementById("delete-file");
+            deleteFileButton.addEventListener("click", function () {
+                uploadedFileDisplay.innerHTML = ""; // Clear the display
+                fileInput.value = ""; // Clear the input value
                 fileUploaded = false; // Reset fileUploaded flag
                 updateButtonState(); // Re-check conditions
             });
 
             // Clean up the temporary URL when no longer needed
-            fileInput.addEventListener('change', function () {
+            fileInput.addEventListener("change", function () {
                 URL.revokeObjectURL(temporaryUrl);
             });
         } else {
@@ -68,8 +63,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Handle dropdown selection
-    dropdown.addEventListener('change', function () {
-        dropdownSelected = dropdown.value !== ''; // Check if a valid option is selected
+    dropdown.addEventListener("change", function () {
+        dropdownSelected = dropdown.value !== ""; // Check if a valid option is selected
         updateButtonState(); // Re-check conditions
     });
 
