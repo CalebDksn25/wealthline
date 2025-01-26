@@ -6,6 +6,33 @@
     margin: 0;
     padding: 0;
 }
+.container {
+    background-color: #ffffff; /* White background */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 15px 20px; /* Reduce vertical and horizontal padding */
+    margin: 10px auto; /* Center the container and keep minimal margin */
+    max-width: 400px; /* Adjust width to fit content */
+    text-align: center; /* Center-align text */
+}
+/* Reduce space between elements */
+.container h1 {
+    margin-bottom: 10px; /* Adjust space below the title */
+}
+
+.container p,
+.container select {
+    margin: 10px 0; /* Adjust space between dropdown and other elements */
+}
+.background-section {
+    background-image: url('images/professional-background-0rvi0y9hjbs1yq1q.jpg'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 50px;
+    color: white; /* Ensures text is readable */
+    text-align: center;
+}
 
 body {
     font-family: 'Roboto', sans-serif; /* Changed to Roboto for better aesthetics */
@@ -50,7 +77,7 @@ button {
     text-transform: uppercase;
     vertical-align: middle;
     align-items: center;
-    border-radius: 0.5rem;
+    border-radius: 1.5rem;
     user-select: none;
     gap: 0.75rem;
     box-shadow:
@@ -91,6 +118,7 @@ button {
     display: flex;
     list-style: none;
     margin-left: auto; /* Push menu to the right */
+    border-radius: 1.5rem;
 }
 
 .menu a {
