@@ -1,0 +1,117 @@
+
+
+// Colors
+//------------
+$wrapper-card-bg:           rgba(21, 34, 46, .25);
+$gauge-shadow:              0 0 0 6px rgba(255, 255, 255, .09), 0 0 35px 5px rgba(255, 255, 255, .29); 
+$gauge-bg:                  #e7e7e7;
+$gauge-common-color:        #15222E;
+$gauge-slice-default-color: #000;
+$gauge-first-slice-color:   #1eaa59;
+$gauge-second-slice-color:  #9baa1e;
+$gauge-third-slice-color:   #f1c40f;
+$gauge-fourth-slice-color:  #e67e22;
+$gauge-fifth-slice-color:   #E84C3D;
+$color-white:               #fff;
+
+.wrapper {
+   display: table;
+   margin: 0 auto;
+   padding: 35px 40px 40px;
+}
+
+.gauge {
+  font-family: Arial, Helvetica, sans-serif;
+  background: $gauge-bg;
+  box-shadow: $gauge-shadow;
+  width: 200px;
+  height: 100px;
+  border-radius: 100px 100px 0 0;
+  position: relative;
+  overflow: hidden;
+  
+  /* safari fix */
+  -webkit-transform-style: flat;
+	-webkit-transform: translateZ(0px);
+  
+  &.min-scaled {
+    transform: scale(.5);
+  }
+}
+
+.gauge-center {
+  content: attr(data-before);
+  color: $color-white;
+  width: 60%;
+  height: 60%;
+  background: $gauge-common-color;
+  border-radius: 100px 100px 0 0;
+  position: absolute;
+  box-shadow: 0 -13px 15px -10px rgba(0, 0, 0, .28);
+  right: 21%;
+  bottom: 0;
+  
+  
+  #counter{
+    color: $color-white;
+    font-size: 1.5em;
+    width: 100%;
+    padding: 20px 0 0 0;
+    text-align: center;
+    float: left;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.needle {
+  width: 78px;
+  height: 7px;
+  background: $gauge-common-color;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 5px;
+  position: absolute;
+  bottom: 4px;
+  left: 20px;
+  transform-origin: 100% 4px;
+  box-shadow: 0 2px 2px 1px rgba(0, 0, 0, .38);
+  transition: transform 0.8s;
+  transition-timing-function: cubic-bezier(.65, 1.95, .03, .32);
+}
+
+.slice-colors .st {
+  position: absolute;
+  bottom: 0;
+  width: 200px;
+  height: 200px;
+  
+  &.slice-item {
+    &:nth-child(1) {
+      background-color: $gauge-first-slice-color;
+      left: -100px;
+      transform-origin: bottom right;
+      transform: rotate(-33deg);
+    }
+    &:nth-child(2) {
+      background-color: $gauge-third-slice-color;
+      left: 54px;
+      transform: rotate(-33deg);
+    }
+    &:nth-child(3) {
+      background-color: $gauge-fifth-slice-color;
+      transform: rotate(33deg);
+      transform-origin: bottom left;
+      left: 100px;
+    }
+    
+  }
+}
+
+// ##########SPEEDOMETR-STYLE#######
+
+.s-box{
+  margin: 0 auto;
+  width: 200px;
+  text-align: center;
+}

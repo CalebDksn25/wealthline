@@ -1,15 +1,183 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Financial Information</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blank Page</title>
+    <link rel="stylesheet" href="style1.css">
     <style>
-        /* Add your custom CSS styles here */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Changed from center to flex-start */
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffffff; /* Set background color to white */
+            position: relative;
+            padding-top: 20px; /* Added padding-top to move everything down */
+        }
+
+        .title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 2em;
+            margin-bottom: 10px; /* Reduced margin-bottom */
+        }
+
+        .box {
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 10px; /* Added margin-top */
+        }
+
+        .wrapper {
+           display: table;
+           margin: 0 auto;
+           padding: 35px 40px 40px;
+        }
+
+        .gauge {
+          font-family: Arial, Helvetica, sans-serif;
+          background: #e7e7e7;
+          box-shadow: 0 0 0 6px rgba(255, 255, 255, .09), 0 0 35px 5px rgba(255, 255, 255, .29);
+          width: 200px;
+          height: 100px;
+          border-radius: 100px 100px 0 0;
+          position: relative;
+          overflow: hidden;
+
+          /* safari fix */
+          -webkit-transform-style: flat;
+          -webkit-transform: translateZ(0px);
+        }
+
+        .gauge.min-scaled {
+          transform: scale(.5);
+        }
+
+        .gauge-center {
+          content: attr(data-before);
+          color: #fff;
+          width: 60%;
+          height: 60%;
+          background: #15222E;
+          border-radius: 100px 100px 0 0;
+          position: absolute;
+          box-shadow: 0 -13px 15px -10px rgba(0, 0, 0, .28);
+          right: 21%;
+          bottom: 0;
+        }
+
+        .gauge-center #counter {
+          color: #fff;
+          font-size: 1.5em;
+          width: 100%;
+          padding: 20px 0 0 0;
+          text-align: center;
+          float: left;
+          -webkit-font-smoothing: antialiased;
+        }
+
+        .needle {
+          width: 78px;
+          height: 7px;
+          background: #15222E;
+          border-bottom-left-radius: 100%;
+          border-bottom-right-radius: 5px;
+          border-top-left-radius: 100%;
+          border-top-right-radius: 5px;
+          position: absolute;
+          bottom: 4px;
+          left: 20px;
+          transform-origin: 100% 4px;
+          box-shadow: 0 2px 2px 1px rgba(0, 0, 0, .38);
+          transition: transform 0.8s;
+          transition-timing-function: cubic-bezier(.65, 1.95, .03, .32);
+        }
+
+        .slice-colors .st {
+          position: absolute;
+          bottom: 0;
+          width: 200px;
+          height: 200px;
+        }
+
+        .slice-colors .st.slice-item:nth-child(1) {
+          background-color: #1eaa59;
+          left: -100px;
+          transform-origin: bottom right;
+          transform: rotate(-33deg);
+        }
+
+        .slice-colors .st.slice-item:nth-child(2) {
+          background-color: #f1c40f;
+          left: 54px;
+          transform: rotate(-33deg);
+        }
+
+        .slice-colors .st.slice-item:nth-child(3) {
+          background-color: #E84C3D;
+          transform: rotate(33deg);
+          transform-origin: bottom left;
+          left: 100px;
+        }
+
+        .s-box {
+          margin: 20px auto 0;
+          width: 200px;
+          text-align: center;
+        }
+
+        .info-list {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .footer-image {
+            position: absolute;
+            bottom: 10px;
+            width: 100px;
+        }
+
+        .header-image {
+            width: 150px;
+            margin-bottom: 10px; /* Adjusted margin to move the logo up */
+        }
     </style>
 </head>
 <body>
-    <h1>Financial Information</h1>
-    <div id="financial-data">
-        <!-- Add your financial data here -->
+    <img src="Wealthline.png" alt="Wealthline Logo" class="header-image">
+    <div class="title">Your Financial Health</div>
+    <div class="box">
+        <div class="wrapper">
+            <div class="gauge">
+              <div class="slice-colors">
+                <div class="st slice-item"></div>
+                <div class="st slice-item"></div>
+                <div class="st slice-item"></div>
+              </div>
+              <div id="arrow" class="needle"></div>
+              <div class="gauge-center"><div id="counter">0</div></div>
+            </div>
+        </div>
+        
+        <div class="s-box">
+            <input id="testParam" type="range" min="0" max="100" value="0">
+        </div>
+
+        <ul class="info-list">
+            <li>Save at least 20% of your income.</li>
+            <li>Invest in a diversified portfolio.</li>
+            <li>Build an emergency fund.</li>
+            <li>Track your expenses regularly.</li>
+        </ul>
     </div>
+    
+    <img src="LPL.png" alt="LPL Logo" class="footer-image">
+    
+    <script src="script1.js"></script>
 </body>
 </html>
